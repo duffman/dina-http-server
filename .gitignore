@@ -1,6 +1,6 @@
 # Lib
 lib
-
+./lib
 # Logs
 logs
 *.log

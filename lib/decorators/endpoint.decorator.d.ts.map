@@ -1,0 +1,1 @@
+{"version":3,"file":"endpoint.decorator.d.ts","sourceRoot":"./src/","sources":["decorators/endpoint.decorator.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,OAAO,EAAE,aAAa,EAAE,MAAM,6BAA6B,CAAC;AAI5D,wBAAgB,QAAQ,CAAC,YAAY,EAAE,aAAa,YAC3B,GAAG,eAAe,MAAM,cAAc,kBAAkB,wBAyBhF"}

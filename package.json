@@ -1,0 +1,32 @@
+{
+	"name": "dina-http-server",
+	"version": "0.7.1",
+	"description": "Lightweight WebServer that wraps and extends Express with sessions, middleware, decorators and so on...",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"format": "prettier --write './*.{js,ts,tsx,json}' 'src/**/*.{js,ts,tsx,json}'",
+		"prepare": "husky install",
+		"build": "tsc && tspath -f",
+		"build-clean": "rm -rf node_modules && yarn install && rm -rf ./lib tsc && tspath -f && cp package.json ./lib/",
+		"test": "mocha --require ts-node/register src/**/*_spec.ts"
+	},
+	"repository": "https://github.com/duffman/dina-http-server.git",
+	"author": "Patrik Forsberg <patrik@coldmind.com>",
+	"license": "MPL-2.0",
+	"private": false,
+	"devDependencies": {
+		"@types/chai": "^4.3.3",
+		"@types/mocha": "^10.0.0",
+		"@types/node": "^18.7.23",
+		"chai": "^4.3.6",
+		"ts-node": "^10.9.1"
+	},
+	"dependencies": {
+		"dina-common": "^0.9.8",
+		"husky": "^8.0.1",
+		"prettier": "^2.7.1",
+		"reflect-metadata": "^0.1.13",
+		"typescript": "^4.8.4"
+	}
+}

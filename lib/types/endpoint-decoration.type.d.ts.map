@@ -1,0 +1,1 @@
+{"version":3,"file":"endpoint-decoration.type.d.ts","sourceRoot":"./src/","sources":["types/endpoint-decoration.type.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,OAAO,EAAE,aAAa,EAAE,MAAM,sBAAsB,CAAC;AAErD,MAAM,WAAW,mBAAmB;IACnC,UAAU,EAAE,MAAM,CAAC;IACnB,YAAY,EAAE,aAAa,CAAA;CAC3B"}

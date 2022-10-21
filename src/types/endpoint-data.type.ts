@@ -3,10 +3,10 @@
  * @date: 2022-10-09 16:54
  */
 
-import { HttpMethod } from "./http-method.type";
+import { RouteMethod } from "@dTypes/route.types";
 
 export interface IEndpointData {
-	method: HttpMethod,
+	method: RouteMethod,
 	path?: string,
 	requireParams?: boolean
 }

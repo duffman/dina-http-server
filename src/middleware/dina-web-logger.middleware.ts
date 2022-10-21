@@ -2,12 +2,19 @@
  * @author: Patrik Forsberg <patrik.forsberg@coldmind.com>
  */
 
-import { Response } from "express";
-import { Request }  from "express";
+import { DLog } from "dina-common";
+import { Response }   from "express";
+import { Request }    from "express";
 
 export function dinaWebLoggerMiddleware(req: Request, resp: Response, next) {
-	resp.removeHeader("X-Powered-By");
+	try {
+		resp.removeHeader("X-Powered-By");
+		DLog.debug(`${ req.method } ${ req.path }`);
 
-	// console.log(`${ req.method } ${ req.path }`);
-	next();
+	} catch (e) {
+		console.error(e);
+	}
+	finally {
+		next();
+	}
 }

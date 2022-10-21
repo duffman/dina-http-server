@@ -3,12 +3,11 @@
  * @date: 2021-10-14 13:39
  */
 
-import { RouterCore }      from "@library/dina-http-server/core/router-core";
-import { IRouteInfo }      from "@library/dina-http-server/core/router-core";
-import { IDinaController } from "@library/dina-http-server/types/dina-controller.type";
-import { RouteMethod }     from "@library/dina-http-server/types/route.types";
-import { PathUtils }       from "@library/utils/path.utils";
-import { StrUtils }        from "@library/utils/str.utils";
+import { IRouteInfo }      from "@dTypes/route-info.type";
+import { UrlUtils }        from "dina-common/utils";
+import { RouterCore }      from "./router-core";
+import { IDinaController } from "@dTypes/dina-controller.type";
+import { RouteMethod }     from "@dTypes/route.types";
 import { Router }          from "express";
 
 export class ControllerRouter {
@@ -33,7 +32,7 @@ export class ControllerRouter {
 	}
 
 	public setBasePath(path: string): void {
-		path          = StrUtils.stripTrailingAndLeadingSlashes(path);
+		path          = UrlUtils.stripTrailingAndLeadingSlashes(path);
 		this.basePath = `/${ path }/`;
 	}
 
@@ -59,7 +58,7 @@ export class ControllerRouter {
 		func: Function,
 		noBasePath?: boolean
 	): boolean {
-		route = PathUtils.stripLeadingSlashes(route);
+		route = UrlUtils.stripLeadingSlashes(route);
 
 		if (!this.routerCore.router) {
 			throw new Error("No router Assigned");

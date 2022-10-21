@@ -2,9 +2,10 @@
  * @author: Patrik Forsberg <patrik.forsberg@coldmind.com>
  * @date: 2021-10-14 13:39
  */
-import { RouterCore } from "@library/dina-http-server/core/router-core";
-import { IDinaController } from "@library/dina-http-server/types/dina-controller.type";
-import { RouteMethod } from "@library/dina-http-server/types/route.types";
+import { IRouteInfo } from "@dTypes/route-info.type";
+import { RouterCore } from "./router-core";
+import { IDinaController } from "@dTypes/dina-controller.type";
+import { RouteMethod } from "@dTypes/route.types";
 import { Router } from "express";
 export declare class ControllerRouter {
     private routerCore;

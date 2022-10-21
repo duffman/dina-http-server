@@ -3,7 +3,7 @@
  */
 import { IDinaController } from "@dTypes/dina-controller.type";
 export interface IDinaWebServer {
-    registerController(controller: IDinaController): boolean;
-    registerControllers(controller: IDinaController[]): boolean;
+    registerController(controller: IDinaController): IDinaWebServer;
+    registerControllers(controller: IDinaController[]): IDinaWebServer;
 }
 //# sourceMappingURL=dina-web-server.type.d.ts.map

@@ -2,8 +2,9 @@
  * @author: Patrik Forsberg <patrik.forsberg@coldmind.com>
 
  */
-import { ActionResult }  from "@core/action-result";
-import { IActionResult } from "@core/types/action-result.type";
+import { ActionResult }  from "dina-common";
+import { IActionResult } from "../../../../core/types/action-result.type";
+
 
 // TypedPropertyDescriptor<(... p:any[]) => Promise<any>>
 

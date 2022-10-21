@@ -1,6 +1,6 @@
 {
-	"name": "dina-http-server",
-	"version": "0.7.1",
+	"name": "dina-ws",
+	"version": "0.7.3",
 	"description": "Lightweight WebServer that wraps and extends Express with sessions, middleware, decorators and so on...",
 	"main": "index.js",
 	"type": "module",
@@ -17,16 +17,20 @@
 	"private": false,
 	"devDependencies": {
 		"@types/chai": "^4.3.3",
+		"@types/express": "^4.17.14",
 		"@types/mocha": "^10.0.0",
 		"@types/node": "^18.7.23",
 		"chai": "^4.3.6",
 		"ts-node": "^10.9.1"
 	},
 	"dependencies": {
-		"dina-common": "^0.9.8",
+		"cors": "^2.8.5",
+		"dina-common": "^1.0.3",
+		"express": "^4.18.2",
 		"husky": "^8.0.1",
 		"prettier": "^2.7.1",
 		"reflect-metadata": "^0.1.13",
+		"tsyringe": "^4.7.0",
 		"typescript": "^4.8.4"
 	}
 }

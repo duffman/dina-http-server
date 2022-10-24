@@ -13,13 +13,15 @@ import { DinaMiddleware } from "@dTypes/dina-middleware.type";
 import { IActionError } from "dina-common";
 import { ActionResult } from "dina-common";
 import EventEmitter from "events";
-import express from "express";
+import { Application } from "express";
 import { Server } from "net";
 import { IDinaController } from "../types";
 import { IDinaWebServer } from "../types";
+export interface AppServer extends Application {
+}
 export declare class DinaWebServer extends EventEmitter implements IDinaWebServer {
     protected routerCore?: RouterCore;
-    protected serverApp: express.Application;
+    protected serverApp: AppServer;
     protected server: Server;
     protected webRoutes: import("express-serve-static-core").Router;
     protected controllers: IDinaController[];

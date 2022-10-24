@@ -3,9 +3,10 @@
  * @date: 2021-06-27 11:57
  */
 
+import { IActionResult }    from "dina-common";
 import { ActionResult }     from "dina-common";
 import { ControllerRouter } from "./controller-router";
-import { IDinaController }  from "@dTypes/dina-controller.type";
+import { IDinaController }  from "../types/dina-controller.type";
 import { Response }         from "express";
 
 export class BaseController implements IDinaController {
@@ -15,7 +16,7 @@ export class BaseController implements IDinaController {
 		return Promise.resolve(undefined);
 	}
 
-	public sendActionResult(resp: Response, actionRes: ActionResult<any>) {
+	public sendActionResult(resp: Response, actionRes: IActionResult) {
 		if (actionRes.success) {
 			resp.status(200).json(actionRes.data);
 		}

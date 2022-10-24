@@ -21,6 +21,7 @@ import { ActionErrorType }          from "dina-common";
 import { ActionError }              from "dina-common";
 import { ActionResult }             from "dina-common";
 import EventEmitter                 from "events";
+import { Application }              from "express";
 import { Express }                  from "express";
 import { Router }                   from "express";
 import express                      from "express";
@@ -30,9 +31,16 @@ import { singleton }                from "tsyringe";
 import { IDinaController }          from "../types";
 import { IDinaWebServer }           from "../types";
 
+export interface AppServer extends Application{
+/*	use(...something: any);
+	set(key: string, val: any);
+	listen(key: any, val: any);*/
+}
+
+
 @singleton()
 export class DinaWebServer extends EventEmitter implements IDinaWebServer {
-	protected serverApp: express.Application;
+	protected serverApp: AppServer;
 	protected server: Server;
 	protected webRoutes    = Router();
 	protected controllers  = new Array<IDinaController>();
@@ -46,7 +54,7 @@ export class DinaWebServer extends EventEmitter implements IDinaWebServer {
 		this.serverApp = this.createServer();
 	}
 
-	private createServer(): Express {
+	private createServer(): AppServer {
 		if (!this.routerCore) {
 			new ActionError("No RouterCore have been assigned.")
 				.setError(new Error(ActionErrorType.InternalError));
@@ -206,11 +214,11 @@ export class DinaWebServer extends EventEmitter implements IDinaWebServer {
 		try {
 			const hostAndPort = `${ host }:${ port }`;
 			this.server       = this.serverApp.listen(port, host);
-			result.setSuccess().setMessage(`ZynServer is listening on :: "${ host }:${ port }"`);
+			result.setSuccess().setMessage(`WebServer is listening on :: "${ host }:${ port }"`);
 		}
 		catch (err) {
 			result.setSuccess(false)
-				  .setError(`ZynServer bind failed on "${ host }:${ port }"`, err)
+				  .setError(`WebServer bind failed on "${ host }:${ port }"`)
 		}
 
 		return result;
